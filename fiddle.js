@@ -48,6 +48,7 @@ function run()
      startStaff = 0; // start with 1st staff
      endStaff = curScore.staves; // and end with last
    }
+   var font = new QFont("Times", 9); 
    
    for (var staff = startStaff; staff < endStaff; ++staff) {
    		cursor.goToSelectionStart();
@@ -62,6 +63,7 @@ function run()
                   if(index >= 0 && index < fingerings.length){ 
                       var text  = new Text(curScore);
                       text.text = fingerings[index];
+                      text.defaultFont = font;
                       text.yOffset = 6;
                       //put the text a bit further below
                       if(index <3 ){
