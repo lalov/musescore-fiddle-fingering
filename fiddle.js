@@ -16,10 +16,10 @@
 //=============================================================================
 
 var fingerings = [ 
-"0\rG", "1\rG", "1\rG", "2\rG", "2\rG", "3\rG", "3#\rG", 
-"0\rD", "1\rD", "1\rD", "2\rD", "2\rD", "3\rD", "3#\rD", 
-"0\rA", "1\rA", "1\rA", "2\rA", "2\rA", "3\rA", "3#\rA", 
-"0\rE", "1\rE", "1\rE", "2\rE", "2\rE", "3\rE", "3#\rE", "4\rE", 
+"0\rG", "1L\rG", "1\rG", "2L\rG", "2\rG", "3\rG", "3H\rG", 
+"0\rD", "1L\rD", "1\rD", "2L\rD", "2\rD", "3\rD", "3H\rD", 
+"0\rA", "1L\rA", "1\rA", "2L\rA", "2\rA", "3\rA", "3H\rA", 
+"0\rE", "1L\rE", "1\rE", "2L\rE", "2\rE", "3\rE", "3H\rE", "4\rE", 
 "1", "1", "2", "2", "3", "3",
 ]; 
 
@@ -50,7 +50,7 @@ function run()
    }
    
    for (var staff = startStaff; staff < endStaff; ++staff) {
-   cursor.goToSelectionStart();
+   		cursor.goToSelectionStart();
        cursor.staff = staff;
       cursor.voice = 0;
       cursor.rewind();  // set cursor to first chord/rest
@@ -62,15 +62,13 @@ function run()
                   if(index >= 0 && index < fingerings.length){ 
                       var text  = new Text(curScore);
                       text.text = fingerings[index];
-                      //text.text = pitch;
                       text.yOffset = 6;
-                      //for de laveste:
+                      //put the text a bit further below
                       if(index <3 ){
                         text.yOffset = 7;
                       }
                       if(index > 6) {
                         text.yOffset = 5;
-                      
                       }
                       cursor.putStaffText(text);
                       }
