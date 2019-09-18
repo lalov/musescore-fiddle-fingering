@@ -10,4 +10,5 @@ The plugin writes the fingering and the name of the string for all notes from G0
 It takes only the first voice in each staff.
 
 The plugin is installed by putting the javascript-file in the plugin directory (normal plugin installation).
+For Musescore use the qml version.
 
